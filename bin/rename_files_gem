@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'rename_files_gem'
+
+# 检查是否提供了路径参数
+if ARGV.empty?
+  puts "Usage: rename_files_gem path/of/some"
+  exit 1
+end
+
+folder_path = ARGV[0]
+
+# 调用你的 Gem 方法，传入路径参数
+begin
+  RenameFilesGem.rename_files_with_pattern(folder_path)
+rescue StandardError => e
+  puts "Error: #{e.message}"
+  exit 1
+end
+
+puts "Files have been successfully renamed."

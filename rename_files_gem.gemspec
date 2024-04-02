@@ -8,17 +8,19 @@ Gem::Specification.new do |spec|
   spec.authors = ["dacaiguoguo"]
   spec.email = ["dacaiguoguo@163.com"]
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.summary = "A Ruby Gem to rename files based on specific patterns within a directory."
+  spec.description = "This Gem provides functionality to recursively rename files in a given directory, applying a new naming scheme based on specific patterns found in the original file names. It's particularly useful for organizing and standardizing file names automatically, such as renaming image files, log files, or any other types of files that follow a consistent naming convention."
+  spec.homepage = "https://github.com/dacaiguoguo/rename_files_gem"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
+  spec.executables << 'rename_files_gem'
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
-
+  # 如果你不使用私有 gem 服务器，可以删除或注释下面这行
+  # spec.metadata["allowed_push_host"] = "https://gems.mycompany.com"
+  
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/dacaiguoguo/rename_files_gem.git"
+  spec.metadata["changelog_uri"] = "https://github.com/dacaiguoguo/rename_files_gem/blob/master/CHANGELOG.md"  
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -29,8 +31,8 @@ Gem::Specification.new do |spec|
         f.start_with?(*%w[bin/ test/ spec/ features/ .git .github appveyor Gemfile])
     end
   end
-  spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
+  spec.bindir = "bin"
+  # spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
