@@ -18,7 +18,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-rename_files_gem path/of/some
+    rename_files_gem path/of/some
 
 ## Development
 
